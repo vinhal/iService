@@ -38,10 +38,7 @@ const Login = ({ history, changeTheme }) => {
             return
         }
 
-        console.log('PADOU')
-
         history.push('/')
-
     }
 
     return (

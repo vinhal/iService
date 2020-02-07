@@ -16,8 +16,8 @@ const Text = ({
   return (
     <Typography
       size={size}
-      spacing={margin}
       weight={weight}
+      spacing={margin}
       transform={transform}
       {...props}
     >
