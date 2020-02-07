@@ -8,7 +8,7 @@ import Button from 'components/Button'
 import { LoginForm } from './style'
 import { validate } from './util'
 
-const Login = ({ changeTheme }) => {
+const Login = ({ history, changeTheme }) => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState({
@@ -37,6 +37,10 @@ const Login = ({ changeTheme }) => {
             setError(init => ({ ...init, ...errors }))
             return
         }
+
+        console.log('PADOU')
+
+        history.push('/')
 
     }
 
