@@ -7,11 +7,11 @@ const Input = React.forwardRef((props, ref) => {
 
     return (
         <TextField
-            error={error}
             inputRef={ref}
             spacing={margin}
             helperText={error}
             variant="outlined"
+            error={Boolean(error)}
             {...otherProps}
         />
     )

@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+const Container = styled.div`
+    width: 100%;
+    height: 100vh;
+`
+
 const LoginForm = styled.form`
     height: 100vh;
     
@@ -10,4 +15,4 @@ const LoginForm = styled.form`
     flex-direction: column;
 `
 
-export { LoginForm }
+export { Container, LoginForm }

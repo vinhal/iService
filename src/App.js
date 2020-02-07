@@ -1,12 +1,26 @@
-import React from 'react';
-import Login from 'containers/Login'
+import React, { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import ThemeProvider from 'commons/styles/theme/ThemeProvider'
+import Main from 'containers/Login'
+import lightTheme from 'commons/styles/theme/light'
+import darkTheme from 'commons/styles/theme/dark'
 
-function App() {
+const App = () => {
+  const [theme, setTheme] = useState(lightTheme)
+
+  const changeTheme = () => setTheme(init =>
+    init.type === 'light'
+      ? darkTheme
+      : lightTheme
+  )
+
   return (
-    <Login>
-      
-    </Login>
-  );
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Main changeTheme={changeTheme} />
+      </BrowserRouter>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App

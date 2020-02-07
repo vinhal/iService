@@ -10,6 +10,6 @@ const BaseButton = styled(MuiButton)`
   }
 
   float: ${({ position }) => position};
+  letter-spacing: ${({ theme }) => theme.typography.letterSpacing}px;
 `
-  // letter-spacing: ${({ theme }) => theme.typography.letterSpacing}px;
 export { BaseButton }
