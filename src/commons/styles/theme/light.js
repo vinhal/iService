@@ -8,7 +8,10 @@ const theme = createMuiTheme({
         },
         secondary: {
             main: '#419D78',
-        }
+        },
+        background: {
+            default: '#fafafa',
+        },
     },
     typography: {
         letterSpacing: 1,
@@ -20,6 +23,6 @@ const theme = createMuiTheme({
     },
 })
 
-console.log('THEME', { theme })
+console.log('LIGHT THEME', { theme })
 
 export default theme

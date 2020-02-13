@@ -10,7 +10,6 @@ const Input = React.forwardRef((props, ref) => {
             inputRef={ref}
             spacing={margin}
             helperText={error}
-            variant="outlined"
             error={Boolean(error)}
             {...otherProps}
         />

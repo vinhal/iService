@@ -52,7 +52,7 @@ const Login = ({ history, changeTheme }) => {
                 value={login}
                 error={error.login}
                 onChange={onEmailChange}
-                margin={{ top: 4, bottom: 2 }}
+                margin={{ top: 4 }}
             />
             <Input
                 label="SENHA"

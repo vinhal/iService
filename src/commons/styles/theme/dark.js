@@ -5,11 +5,12 @@ const theme = createMuiTheme({
     palette: {
         primary: {
             main: '#3C91E6',
-            dark: '#73009A',
         },
         secondary: {
             main: '#222',
-            light: '#00FFE6',
+        },
+        background: {
+            default: "#ddd",
         },
     },
     typography: {
@@ -22,6 +23,6 @@ const theme = createMuiTheme({
     },
 })
 
-console.log('THEME', { theme })
+console.log('DARK THEME', { theme })
 
 export default theme

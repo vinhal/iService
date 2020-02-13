@@ -19,9 +19,11 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Switch>
-          {routes.map(({ component: Component, ...route }) => (
+          {routes.map(({ path, component: Component, ...route }) => (
             <Route
               exact
+              key={path}
+              path={path}
               {...route}
               render={props => (
                 <Suspense fallback={<Loading />}>
