@@ -10,7 +10,7 @@ const theme = createMuiTheme({
             main: '#222',
         },
         background: {
-            default: "#ddd",
+            default: '#ddd',
         },
     },
     typography: {

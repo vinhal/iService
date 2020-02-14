@@ -10,10 +10,7 @@ const App = () => {
   const [theme, setTheme] = useState(lightTheme)
 
   const changeTheme = () => setTheme(init =>
-    init.type === 'light'
-      ? darkTheme
-      : lightTheme
-  )
+    init.type === 'light' ? darkTheme : lightTheme)
 
   return (
     <ThemeProvider theme={theme}>
@@ -26,7 +23,7 @@ const App = () => {
               path={path}
               {...route}
               render={props => (
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<Loading full />}>
                   <Component changeTheme={changeTheme} {...props} />
                 </Suspense>
               )}
