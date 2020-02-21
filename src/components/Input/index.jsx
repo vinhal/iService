@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { TextField } from './style'
 
@@ -16,9 +16,11 @@ const Input = React.forwardRef((props, ref) => {
     )
 })
 
+Input.displayName = 'Input'
+
 Input.propTypes = {
     error: PropTypes.string,
     margin: PropTypes.object,
 }
 
-export default Input
+export default memo(Input)

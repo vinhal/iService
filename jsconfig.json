@@ -19,6 +19,9 @@
       ],
       "commons/*": [
         "./commons/*"
+      ],
+      "context/*": [
+        "./context/*"
       ]
     }
   },

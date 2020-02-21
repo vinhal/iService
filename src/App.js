@@ -5,6 +5,7 @@ import lightTheme from 'commons/styles/theme/light'
 import darkTheme from 'commons/styles/theme/dark'
 import Loading from 'components/Loading'
 import routes from 'routes'
+import UserProvider from 'context/User/Provider'
 
 const App = () => {
   const [theme, setTheme] = useState(lightTheme)
@@ -14,23 +15,25 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Switch>
-          {routes.map(({ path, component: Component, ...route }) => (
-            <Route
-              exact
-              key={path}
-              path={path}
-              {...route}
-              render={props => (
-                <Suspense fallback={<Loading full />}>
-                  <Component changeTheme={changeTheme} {...props} />
-                </Suspense>
-              )}
-            />
-          ))}
-        </Switch>
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <Switch>
+            {routes.map(({ path, component: Component, ...route }) => (
+              <Route
+                exact
+                key={path}
+                path={path}
+                {...route}
+                render={props => (
+                  <Suspense fallback={<Loading full />}>
+                    <Component changeTheme={changeTheme} {...props} />
+                  </Suspense>
+                )}
+              />
+            ))}
+          </Switch>
+        </BrowserRouter>
+      </UserProvider>
     </ThemeProvider>
   )
 }

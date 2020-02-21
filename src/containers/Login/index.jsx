@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from 'assets/logo.svg'
 import authApi from 'resources/auth'
 import Input from 'components/Input'
 import Button from 'components/Button'
+import UserContext from 'context/User/context'
 import { LoginForm } from './style'
 import { validate } from './util'
 
@@ -18,6 +19,7 @@ const Login = ({ history, changeTheme }) => {
     })
 
     const { palette } = useContext(ThemeContext)
+    const { authUser } = useContext(UserContext)
 
     const onEmailChange = ev => {
         setLogin(ev.target.value)
@@ -43,7 +45,7 @@ const Login = ({ history, changeTheme }) => {
             email: login,
             password,
         }).then(token => {
-            console.log('TOKEN', token)
+            authUser(token)
             history.push('/')
         })
     }
