@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components'
 import PropTypes from 'prop-types'
 import Switch from '@material-ui/core/Switch'
 import { ReactComponent as Logo } from 'assets/logo.svg'
+import authApi from 'resources/auth'
 import Input from 'components/Input'
 import Button from 'components/Button'
 import { LoginForm } from './style'
@@ -38,7 +39,13 @@ const Login = ({ history, changeTheme }) => {
             return
         }
 
-        history.push('/')
+        authApi.login({
+            email: login,
+            password,
+        }).then(token => {
+            console.log('TOKEN', token)
+            history.push('/')
+        })
     }
 
     return (
@@ -78,6 +85,7 @@ const Login = ({ history, changeTheme }) => {
 
 Login.propTypes = {
     changeTheme: PropTypes.func,
+    history: PropTypes.object,
 }
 
 export default Login
