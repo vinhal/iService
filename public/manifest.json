@@ -6,6 +6,11 @@
   "display": "standalone",
   "icons": [
     {
+      "src": "favicon.ico",
+      "sizes": "64×64 32×32 24×24 16×16",
+      "type": "image/x-icon"
+    },
+    {
       "src": "images/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
