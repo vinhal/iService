@@ -1,9 +1,6 @@
 {
-  "name": "iService App",
   "short_name": "iService",
-  "theme_color": "#000",
-  "background_color": "#FFFF",
-  "display": "standalone",
+  "name": "iService App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -50,5 +47,9 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
